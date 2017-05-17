@@ -11,15 +11,19 @@ class FBLikerTest extends PHPUnit_Extensions_Selenium2TestCase
     }
 
     const PHOTO_URLS = [
-        'https://www.facebook.com/photo.php?fbid=708423979318875&set=a.103364529824826.7563.100004538376348&type=3&theater',
+        'https://www.facebook.com/photo.php?fbid=755335437913094&set=a.100385076741470.686.100003099331858&type=3&theater',
     ];
 
     const PAGE_URLS = [
-        'https://www.facebook.com/Harshi-Srivastava-1857529834534345',
+        'https://www.facebook.com/likes.bazaar',
     ];
 
     const ACCOUNTS = [
-        'juhi.sharma12@rediffmail.com' => '7809863931',
+        'sahurasmita228@gmail.com' =>    'r11s7s74',
+        'sahurasmita228@yahoo.com' =>   'r11s7s74',
+        'sahurasmita228@rediffmail.com' =>  'r11s7s74',
+        'sahurasmita228@hotmail.com' => 'r11s7s74',
+        'sahurasmita228@gmx.com' => 'r11s7s74',
     ];
 
     public function testRecursive()
@@ -31,6 +35,7 @@ class FBLikerTest extends PHPUnit_Extensions_Selenium2TestCase
 
     public function FBForRec($email, $password)
     {
+        echo $email;
         $this->url('https://www.facebook.com'); 
         $this->byName('email')->clear();
         $this->byName('email')->value($email);
@@ -53,7 +58,7 @@ class FBLikerTest extends PHPUnit_Extensions_Selenium2TestCase
             $this->keys(Keys::ESCAPE);
             sleep(1);
             $this->keys('l'.Keys::ENTER);
-            sleep(1);    
+            sleep(3);    
             $this->keys(Keys::ESCAPE);
             sleep(0.5);
         }
@@ -63,6 +68,8 @@ class FBLikerTest extends PHPUnit_Extensions_Selenium2TestCase
     {
         foreach (self::PAGE_URLS as $url) {
             $this->url($url);
+            sleep(1);
+            $this->keys(Keys::ESCAPE);
             sleep(1);
             $this->keys(Keys::ESCAPE);
             $this->byClassName('likeButton')->click();

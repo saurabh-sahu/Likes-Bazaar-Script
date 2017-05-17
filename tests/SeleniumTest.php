@@ -153,6 +153,7 @@ class SeleniumTest extends PHPUnit_Extensions_Selenium2TestCase
 //     {   
 //         $count = 1;
 //         /*$this->url('https://www.facebook.com'); 
+
 //         $this->byName('firstname')->value('Saurabh');
 //         $this->byName('lastname')->value('Sahu');
 //         $this->byName('reg_email__')->value('rockinkoldude+1@gmail.com');
@@ -195,6 +196,12 @@ class SeleniumTest extends PHPUnit_Extensions_Selenium2TestCase
 //         $elements->click();
 //         $this->visit('/en/View_Ads');
 //     }
+
+
+
+//$this->byXPath('//div[@data-click="profile_icon"]')->click();   =----> XPath
+
+
 
     protected function visit($path)
     {
