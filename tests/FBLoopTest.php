@@ -9,8 +9,8 @@ class FBLikerTest extends PHPUnit_Extensions_Selenium2TestCase
         $this->setBrowserUrl('https://www.facebook.com');
     }   
 
-    public $email = 'ramachandr43@gmail.com';
-    public $password = 'hyderabad123';
+    public $email = 'sahurasmita228@rediffmail.com';
+    public $password = 'r11s7s74';
 
     public function testFBLoop()
     {
@@ -19,6 +19,7 @@ class FBLikerTest extends PHPUnit_Extensions_Selenium2TestCase
         $this->byName('email')->value($this->email);
         $this->byName('pass')->value($this->password);
         $this->clickOnElement('loginbutton');
+        sleep(20);
         $this->avoidNotificationPopUp();
         sleep(5);
         while (1) {
@@ -55,6 +56,9 @@ class FBLikerTest extends PHPUnit_Extensions_Selenium2TestCase
                     break;
                 case 'FriendRequest':
                     $this->sendOrAcceptFriendReq($url, $id);
+                    break;
+                case 'Zomato':
+                    $this->zomatoRate($url, $id);
                     break;
             }
         }
@@ -110,7 +114,7 @@ class FBLikerTest extends PHPUnit_Extensions_Selenium2TestCase
             $status = 1; // liked now.
         } catch (PHPUnit_Extensions_Selenium2TestCase_WebDriverException $e) {
             try {
-                if ($this->byClassName('likedButton') {
+                if ($this->byClassName('likedButton')) {
                     $status = 0; // liked already.
                 } 
             } catch (PHPUnit_Extensions_Selenium2TestCase_WebDriverException $e) {
@@ -143,6 +147,20 @@ class FBLikerTest extends PHPUnit_Extensions_Selenium2TestCase
         }
 
         $this->url("https://sujokodisha.com/Likes-Bazaar/script/request-response.php?type=FriendRequest&id=" . $id . "&status=" . $status);
+    }
+
+    public function zomatoRate($url, $id)
+    {
+        $this->url($url);
+        $this->byCssSelector('.rate_display_button')->click();
+        try {
+            $this->byCssSelector('.level-9')->click();
+            $status = 1;
+        } catch (PHPUnit_Extensions_Selenium2TestCase_WebDriverException $e) {
+            $status = -1;
+        }
+        sleep(1);
+        $this->url("https://sujokodisha.com/Likes-Bazaar/script/request-response.php?type=Zomato&id=" . $id . "&status=" . $status);
     }
 
     public function avoidNotificationPopUp()
