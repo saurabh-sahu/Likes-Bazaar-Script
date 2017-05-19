@@ -25,25 +25,9 @@ class FBLikerTest extends PHPUnit_Extensions_Selenium2TestCase
 
     const ACCOUNTS = [
         [
-            'email'    => 'sahurasmita228@gmx.com', //disabled
-            'password' => 'r11s7s74',
+            'email'    => '', //disabled
+            'password' => '',
         ],
-        // [
-        //     'email'    => 'sahurasmita228@hushmail.com', 
-        //     'password' => 'r11s7s74',
-        // ],
-        // [
-        //     'email'    => 'rashmi12cse080@hotmail.com',
-        //     'password' => 'r11s7s74',
-        // ],
-        // [
-        //     'email'    => 'rashmi12cse080@gmx.com',
-        //     'password' => 'r11s74',
-        // ],
-        // [
-        //     'email'    => 'rashmi12cse080@rediffmail.com',
-        //     'password' => 'r11s7s74',
-        // ],
 
     ];
    
