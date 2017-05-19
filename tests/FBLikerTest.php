@@ -19,11 +19,8 @@ class FBLikerTest extends PHPUnit_Extensions_Selenium2TestCase
     ];
 
     const ACCOUNTS = [
-        'sahurasmita228@gmail.com' =>    'r11s7s74',
-        'sahurasmita228@yahoo.com' =>   'r11s7s74',
-        'sahurasmita228@rediffmail.com' =>  'r11s7s74',
-        'sahurasmita228@hotmail.com' => 'r11s7s74',
-        'sahurasmita228@gmx.com' => 'r11s7s74',
+        'email' =>    'password',
+        
     ];
 
     public function testRecursive()
