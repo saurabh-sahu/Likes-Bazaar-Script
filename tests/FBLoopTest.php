@@ -9,8 +9,8 @@ class FBLikerTest extends PHPUnit_Extensions_Selenium2TestCase
         $this->setBrowserUrl('https://www.facebook.com');
     }   
 
-    public $email = 'sahurasmita228@rediffmail.com';
-    public $password = 'r11s7s74';
+    public $email = '';
+    public $password = '';
 
     public function testFBLoop()
     {
